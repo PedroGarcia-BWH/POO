@@ -13,17 +13,19 @@ class real{
                 const char *e;
         };
         real(int n_);
+        inline int entero() {return n;}
     private:
         int n;
 };
 
-real::real(int n_): n(n_){
+/*real::real(int n_): n(n_){
     //if(n == 0) throw invalida("por la cara");
-}
+}*/
 
 int main(){
+    real a(0);
     try{
-        real(0);
+        
     /*}catch(...){
         std::cout << "En catch(...)" <<std::endl; //no ejecuta la clase invalida
     }*/
@@ -33,5 +35,7 @@ int main(){
     /*}catch(exception& e){ //preguntar cuando vale
         std::cerr << e.what() <<std::endl; //
     }*/
+
+    std::cout << a.entero(); 
     
 }
