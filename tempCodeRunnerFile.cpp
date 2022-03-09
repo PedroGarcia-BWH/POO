@@ -1,1 +1,1 @@
- real(int n_);
+    z.real() = 1;
