@@ -63,9 +63,19 @@ Vector::Vector(const std::initializer_list<double>& l): n(l.size()), datos(new d
         i++;
     }
 }
+//-----------------------------------------EJERCICIO 2----------------------------------
+class doble{
+    public: 
+        inline doble(double num): num(num) {};
+        //inline doble(doble& a): num(a.num) {}
+        inline operator double() {return num;}
+
+    private:
+        double num;
+};
 
 int main(){
-    Vector v1(5, 1.2);
+    /*Vector v1(5, 1.2);
     Vector v2(4); //v2={0, 0, 0, 0}
     Vector v5={1,2.5,3}; //v5={1,2.5,3}
 
@@ -75,7 +85,14 @@ int main(){
     v7.at(0)=v6.at(9);
     }catch (std::out_of_range& e){
     std::cout << e.what() << std::endl;
-    }
+    }*/
+
+double a = 1.5, b= 10.5;
+doble c = 5.25,
+d=c;
+std::cout << c / d * b + b * c - c * c / b + b / c << std::endl; //65
+d = a = b += c;
+std::cout << d << ' ' << a << ' ' << b << ' '<< c << std::endl; // 15,75 15,75 15,75 5,25
 }
 
 

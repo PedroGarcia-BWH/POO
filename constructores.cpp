@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 class A{
 
 };
@@ -46,6 +47,39 @@ complejo operator -(const complejo& n){
 bool operator == (const complejo& n1, const complejo& n2){
     if(n1.real() == n2.real() && n1.imag() == n2.imag()) return true;
     else return false;
+}
+
+class fecha {
+    public:
+    class Invalida { //clase de excepción
+    public:
+    Invalida (const char*);
+    const char* por_que() const;
+    private:
+    const char* razón;
+    };
+    explicit fecha(int d = 0, int m = 0, int a = 0);
+    explicit fecha(char*);
+    int dia () const noexcept;
+    int mes () const noexcept;
+    int anno () const noexcept;
+    // …
+    private:
+    int dia_, mes_, anio_;
+};
+
+
+fecha::fecha(char* cad = ""){ //preguntar pq const char* no funciona con strtok
+    if(strlen(cad) > 10 || strlen(cad) < 8 ) throw Invalida("Formato no valido");
+    char* aux;
+    aux = strtok(cad, "/");
+    if
+    dia_ = (int)aux;
+    aux = strtok(NULL, "/");
+    mes_ = (int)aux;
+    aux = strtok(NULL, "/");
+    anio_ = (int)aux;
+
 }
 
 
