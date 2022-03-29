@@ -62,10 +62,12 @@ Cadena& Cadena::operator +(const Cadena& cad) noexcept{
 }
 
 std::ostream& operator << (std::ostream& os, const Cadena& c){
-    for(int i=0; i<c.n; i++){
+    /* for(int i=0; i<c.n; i++){
         os<<c.pc[i];
-    }
+    }*/ 
+    os << c.pc;
     return os;
 }
+
 
 
