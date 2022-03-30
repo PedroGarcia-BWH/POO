@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+
 class Cadena {
     public:
         explicit Cadena(size_t n = 0);
@@ -68,6 +69,35 @@ std::ostream& operator << (std::ostream& os, const Cadena& c){
     os << c.pc;
     return os;
 }
+// ejercicio 4 a
+template <class RandomAccessIterator>
+bool ordenado(RandomAccessIterator begin, RandomAccessIterator end){
+    if(begin == end) return true;
+    while(begin != end){
+        if(*end < *begin) return false;
+       begin++ 
+    }
+    return true;
+}
+
+template <class RandomAccessIterator>
+bool ordenado(RandomAccessIterator begin, RandomAccessIterator end, Compare comp){
+    if(begin == end) return true;
+    while(begin != end){
+        if(comp(*end, *begin)) return false;
+       begin++ 
+    }
+    return true;
+}
+
+/*
+    int main(){
+        int v[3] = {1,2,3};
+
+        bool ord = ordenado()
+    }
+*/
+
 
 
 
