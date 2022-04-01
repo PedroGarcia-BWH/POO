@@ -14,7 +14,7 @@ class Objeto
     void lanzamiento() {
     Objeto* o = new Objeto("‘objeto local de lanzamiento()’");
 
-    cout << "M´etodo lanzamiento() para " << nombre << endl;
+    cout << "Metodo lanzamiento() para " << nombre << endl;
     throw o;
     }
     void saludo() {
