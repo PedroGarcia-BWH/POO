@@ -90,13 +90,14 @@ bool ordenado(RandomAccessIterator begin, RandomAccessIterator end, Compare comp
     return true;
 }
 
-/*
-    int main(){
-        int v[3] = {1,2,3};
 
-        bool ord = ordenado()
+    int main(){
+        Cadena a("Carlos maricon");
+        char b = a[1];
     }
-*/
+
+    
+
 
 
 

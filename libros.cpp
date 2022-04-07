@@ -11,14 +11,29 @@ using namespace std;
     titulo = new char[strlen(t) + 1];
     strcpy(titulo , t);
     }
+
+    Libro& operator ++();
+    Libro operator ++(int);
     ~Libro() { delete [] titulo ; }
     void pagina(int p) { paginas = p; }
     int pagina() const { return paginas; }
     char* titulos() const { return titulo ; }
     };
 
-   void mostrar(Libro l)
+   void mostrar(Libro l) noexcept
     { cout << l.titulos() << " tiene " << l.pagina() << " paginas" << endl; }
+
+    Libro& Libro::operator ++(){
+        paginas++;
+        return *this;
+    }
+
+    Libro Libro::operator ++(int){
+        Libro aux(*this);
+        paginas ++;
+
+        return aux;
+    }
 
     int main()
     {
@@ -28,6 +43,10 @@ using namespace std;
         mostrar(l3);
         Libro l4(l2);
         l3 = l1;
+        l3++;
+        ++l3;
         mostrar(l1), mostrar(l2), mostrar(l3);mostrar(l4);
         cout << " Hola";
     }
+
+    
