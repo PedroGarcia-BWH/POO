@@ -1,23 +1,23 @@
 #include <iostream>
 
 
- /*using namespace std;
+ using namespace std;
 
- class B{
-public:
-void f(){ cout<< "f() de B" << endl;}
-virtual void g() {cout << "g() de B "<< endl;}
- virtual void h()=0;
+ /*class B{
+  public:
+        void f(){ cout<< "f() de B" << endl;}
+        virtual void g() {cout << "g() de B "<< endl;}
+        virtual void h()=0;
  protected:
- int b;
+        int b;
 };
 
-class D1: virtual public B{
-public:
- void f(){ cout << "f() de D1" << endl;}
- virtual void g(){ cout << "g() de D1" << endl;}
-protected:
- int d1;
+class D1:  public B{
+    public:
+          void f(){ cout << "f() de D1" << endl;}
+          virtual void g(){ cout << "g() de D1" << endl;}
+    protected:
+          int d1;
 };
 
 class D2: virtual public B{
