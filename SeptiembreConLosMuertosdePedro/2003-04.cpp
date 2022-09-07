@@ -66,7 +66,7 @@ bool ordenado(iterator begin, iterator end){
 
 template <typename iterator, typename T>
 bool ordenado(iterator begin, iterator end, T func){
-    for(auto i = begin +1; i != end ; i++){
+    for(iterator i = begin +1; i != end ; i++){
         if(func(i, i-1)) return false
     }
 
