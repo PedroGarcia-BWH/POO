@@ -12,7 +12,6 @@ class elipse{
             radioY *= factor;
         }
         
-        protected:
             virtual void escala(double factorX, double factorY) { 
                     radioX *= factorX;
                     radioY *= factorY;
